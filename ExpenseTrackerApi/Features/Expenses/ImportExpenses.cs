@@ -27,7 +27,6 @@ namespace ExpenseTrackerApi.Features.Expenses
                     if (file == null || file.Length == 0)
                         return Results.BadRequest(new { Message = "No file uploaded" });
 
-                    // Validate file type
                     var allowedExtensions = new[] { ".csv", ".txt", ".xlsx", ".xls" };
                     var fileExtension = Path.GetExtension(file.FileName).ToLowerInvariant();
                     if (!allowedExtensions.Contains(fileExtension))

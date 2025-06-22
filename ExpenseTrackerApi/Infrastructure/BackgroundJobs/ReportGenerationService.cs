@@ -28,7 +28,7 @@ namespace ExpenseTrackerApi.Infrastructure.BackgroundJobs
                     var pendingJobs = await context.ReportJobs
                         .Where(j => j.Status == "pending")
                         .OrderBy(j => j.CreatedAt)
-                        .Take(10) // Process maximum 10 jobs at a time
+                        .Take(10)
                         .ToListAsync();
 
                     if (pendingJobs.Any())

@@ -24,13 +24,13 @@ namespace ExpenseTrackerApi.Infrastructure.Services
 
         public async Task<T?> GetAsync<T>(string key)
         {
-            if (_memoryCache.TryGetValue(key, out T cachedValue))
+            if (_memoryCache.TryGetValue(key, out T? cachedValue))
                 return cachedValue;
 
             var redisValue = await _database.StringGetAsync(key);
             if (redisValue.HasValue)
             {
-                var value = JsonSerializer.Deserialize<T>(redisValue);
+                var value = JsonSerializer.Deserialize<T>(redisValue!);
                 _memoryCache.Set(key, value, TimeSpan.FromMinutes(5));
                 return value;
             }

@@ -85,7 +85,7 @@ namespace ExpenseTrackerApi.Features.Reports
                 catch (ArgumentException ex)
                 {
                     logger.LogError(ex, "Invalid argument for email report generation: {Message}", ex.Message);
-                    return Results.BadRequest(new { Message = ex.Message });
+                    return Results.BadRequest(new { ex.Message });
                 }
                 catch (UnauthorizedAccessException ex)
                 {
@@ -100,7 +100,7 @@ namespace ExpenseTrackerApi.Features.Reports
                 catch (InvalidOperationException ex)
                 {
                     logger.LogError(ex, "Invalid operation during report generation: {Message}", ex.Message);
-                    return Results.BadRequest(new { Message = ex.Message });
+                    return Results.BadRequest(new { ex.Message });
                 }
                 catch (TimeoutException ex)
                 {

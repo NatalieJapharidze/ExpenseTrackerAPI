@@ -9,7 +9,6 @@
         public string ColorHex { get; set; } = string.Empty;
         public decimal MonthlyBudget { get; set; }
         public bool IsActive { get; set; } = true;
-
         public User User { get; set; } = null!;
         public ICollection<Expense> Expenses { get; set; } = new List<Expense>();
     }

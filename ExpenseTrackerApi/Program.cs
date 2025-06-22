@@ -80,19 +80,7 @@ namespace ExpenseTrackerApi
 4. View analytics with `GET /api/analytics/category-breakdown`
 
 ---
-**📧 Email:** support@expensetracker.com | **🌐 Docs:** [API Guide](https://docs.expensetracker.com)
-",
-                    Contact = new OpenApiContact
-                    {
-                        Name = "Expense Tracker Support",
-                        Email = "support@expensetracker.com",
-                        Url = new Uri("https://expensetracker.com/support")
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "MIT License",
-                        Url = new Uri("https://opensource.org/licenses/MIT")
-                    }
+"
                 });
 
                 c.TagActionsBy(api => new[] { GetTagForController(api) });
