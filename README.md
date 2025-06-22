@@ -294,13 +294,6 @@ dotnet run --urls="https://localhost:7015;http://localhost:5111"
 - Performance logging for slow queries
 - Error tracking with full stack traces
 
-### **Health Checks**
-```http
-GET /health          # Application health
-GET /health/ready    # Readiness probe
-GET /health/live     # Liveness probe
-```
-
 ### **Metrics**
 - Background job execution times
 - Cache hit/miss ratios
